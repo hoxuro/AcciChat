@@ -30,7 +30,11 @@ class Home extends Controller
         }
 
         // ejecutamos la vista pasando
-        $this->view('register', ['todos' => $todos->todos]);  // esta direccion que le pasamos no tiene nada que ver con el modelo
-        //                                  // y sus metodos
+        $this->view('login', ['todos' => $todos->todos]);
+    }
+
+    public function register()
+    {
+        $this->view('register');
     }
 }

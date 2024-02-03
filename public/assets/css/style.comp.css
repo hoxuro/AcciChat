@@ -56,6 +56,13 @@ body {
   height: 100vh;
   position: relative; }
 
+.error-box {
+  background-color: #ff6e6e;
+  padding: 0.5rem 0.25rem; }
+  .error-box__text {
+    text-align: center;
+    color: #721e1e; }
+
 /*********************************
 *           LOGIN FORM           *
 *********************************/
@@ -115,13 +122,84 @@ body {
     .loginForm__reg-link:hover, .loginForm__reg-link:active {
       color: var(--color-primary-dark); }
 
-.error-box {
-  display: none;
-  background-color: #ff6e6e;
-  padding: 0.5rem 0.25rem; }
-  .error-box__text {
-    text-align: center;
-    color: #721e1e; }
+/*********************************
+*        REGISTRATION FORM       *
+*********************************/
+.section-registrationForm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .section-registrationForm .heading-primary {
+    text-align: center; }
+
+.registrationForm {
+  width: 50rem;
+  margin: 0 auto;
+  padding-top: 2rem; }
+  .registrationForm label {
+    color: var(--color-grey-dark-2); }
+  .registrationForm input {
+    font-family: var(--family-primary);
+    font-size: var(--default-fs);
+    width: 100%;
+    outline: none;
+    border: none;
+    background: none;
+    border-bottom: var(--line-2); }
+    .registrationForm input:focus {
+      outline: none;
+      border-bottom: 2px solid var(--color-primary); }
+    .registrationForm input:focus:invalid {
+      border-bottom: 2px solid red; }
+  .registrationForm input[type="submit"] {
+    width: 100%;
+    font-family: var(--family-primary);
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 500;
+    border: none;
+    transition: all 0.3s;
+    margin-bottom: 2rem; }
+    .registrationForm input[type="submit"]:hover, .registrationForm input[type="submit"]:active {
+      background-color: var(--color-primary-dark); }
+  .registrationForm input[type="file"] {
+    border: none;
+    margin-top: 1rem; }
+  .registrationForm__group {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap; }
+    .registrationForm__group:not(:last-child) {
+      margin-bottom: 2rem; }
+  .registrationForm__group--two-cols {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-bottom: 2rem; }
+    .registrationForm__group--two-cols__col {
+      flex: 0 0 50%;
+      display: flex;
+      flex-flow: column nowrap; }
+      .registrationForm__group--two-cols__col label {
+        text-align: center; }
+      .registrationForm__group--two-cols__col input {
+        width: 90%; }
+    .registrationForm__group--two-cols__col:last-child input {
+      align-self: flex-end; }
+  .registrationForm__sign-text {
+    display: inline-block;
+    margin-right: 1rem;
+    font-size: var(--small-fs); }
+  .registrationForm__reg-link {
+    text-decoration: none;
+    color: var(--color-grey-dark-4);
+    font-size: var(--small-fs); }
+    .registrationForm__reg-link:hover, .registrationForm__reg-link:active {
+      color: var(--color-primary-dark); }
 
 /*********************************
 *       COPYRIGHT                *

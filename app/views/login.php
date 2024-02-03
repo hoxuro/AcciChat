@@ -11,9 +11,10 @@
 
 <body>
     <main class="dashboard">
+        <h1>login</h1>
         <section class="section-loginForm">
             <h1 class="heading-primary">AcciChat</h1>
-            <!-- REGISTER FORM -->
+            <!-- LOGIN FORM -->
             <form action="#" method="post" class="loginForm">
                 <div class="loginForm__group">
                     <div class="error-box">
