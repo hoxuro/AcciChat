@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="https://github.com/hoxuro/AcciChat/assets/86883781/8c87c054-a689-4607-ae59-3f5dbd593be6" width="200px" height="200px" />
+  <img src="https://github.com/hoxuro/AcciChat/assets/86883781/c369fe69-7a81-46dd-84ee-690c7b0998e0" width="200px" height="200px" />
   <br>
   AcciChat
   <br>
