@@ -7,4 +7,4 @@ define('DBUSER', 'root');
 define('DBPASS', '');
 define('DBDRIVE', '');
 
-define('ROOT', 'http://localhost/todo/public');   // Cambiará cuando cambiemos de servidor
+define('ROOT', 'http://localhost/accichat/public');   // Cambiará cuando cambiemos de servidor
