@@ -1,0 +1,15 @@
+{
+  "name": "accichat",
+  "version": "1.0.0",
+  "description": "Web chat application",
+  "main": "public/index.php",
+  "scripts": {
+    "start": "live-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hoxuro",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.70.0"
+  }
+}
