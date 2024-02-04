@@ -2,16 +2,19 @@
 *           LOGIN FORM           *
 *********************************/
 
-.section-loginForm {
+.loginForm-box {
   width: 50rem;
-  height: 80rem;
-
   margin: 0 auto;
-  padding: 1rem;
 
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
+
+  .heading-primary {
+    text-align: center;
+  }
+
+  /*************** QUERIES ****************/
 
   @include respond(phone) {
     width: 40rem;
@@ -23,10 +26,6 @@
 
   @include respond(phone-375) {
     width: 28rem;
-  }
-
-  .heading-primary {
-    text-align: center;
   }
 }
 

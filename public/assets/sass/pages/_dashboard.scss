@@ -1,3 +1,36 @@
+.dashboard {
+  max-width: 120rem;
+  min-height: 100vh;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+/*********************************
+*       USERS LIST               *
+*********************************/
+
+.search-users-box {
+  max-width: 60rem;
+  margin: 4rem auto 0 auto;
+  padding: 4rem 2rem;
+
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+
+  @include respond(phone) {
+    margin: 0 auto;
+    padding: 4rem 1rem;
+    box-shadow: none;
+  }
+}
+
+/*********************************
+*       LOGO                     *
+*********************************/
+
 .logo-box {
   width: 100%;
   display: flex;
@@ -8,6 +41,10 @@
   width: 100px;
   height: 100px;
 }
+
+/*********************************
+*       ERROR BOX                *
+*********************************/
 
 .error-box {
   display: none;
@@ -26,7 +63,7 @@
 
 .copy-box {
   font-size: var(--small-fs);
-  margin: 0 0 0.5rem 2rem;
+  margin: 4rem 0 0.5rem 2rem;
 
   &__author {
     text-decoration: none;

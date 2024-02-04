@@ -1,5 +1,5 @@
 .user {
-  max-width: 45rem;
+  width: 45rem;
   margin: 0 auto;
   display: flex;
 
@@ -53,6 +53,9 @@
   }
 
   /*************** QUERIES ****************/
+  @include respond(phone-480) {
+    max-width: 45rem;
+  }
 
   @include respond(phone-375) {
     flex-flow: column;
@@ -67,6 +70,8 @@
 
     img {
       margin: 0 0 1rem 0;
+      width: 150px;
+      height: 150px;
     }
 
     &__btn {

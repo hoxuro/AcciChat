@@ -9,6 +9,7 @@
   }
 
   input[type="text"] {
+    width: 100%;
     padding: 1rem 0;
     color: var(--color-grey-dark-3);
     background: none;
@@ -34,10 +35,10 @@
     }
   }
 
+  /*************** QUERIES ****************/
+
   @include respond(phone-375) {
     flex-flow: column;
-    align-items: center;
-    align-content: center;
 
     input[type="submit"] {
       margin-top: 2rem;
