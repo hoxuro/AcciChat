@@ -17,4 +17,9 @@ class Home extends Controller
     {
         $this->view('users');
     }
+
+    public function chat()
+    {
+        $this->view('chat');
+    }
 }
