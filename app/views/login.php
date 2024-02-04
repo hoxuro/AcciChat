@@ -11,7 +11,7 @@
 
 <body>
     <main class="dashboard">
-        <section class="section-registrationForm">
+        <section class="section-loginForm">
             <div class="logo-box">
                 <svg class="form-logo" id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 470.57 470.57">
                     <defs>
@@ -56,47 +56,30 @@
 
             <h1 class="heading-primary">AcciChat</h1>
             <!-- LOGIN FORM -->
-            <form action="#" method="post" class="registrationForm" enctype="multipart/form-data">
-                <div class="registrationForm__group">
+            <form action="#" method="post" class="loginForm">
+                <div class="loginForm__group">
                     <div class="error-box">
                         <p class="error-box__text">This is an error message!</p>
                     </div>
                 </div>
-                <div class="registrationForm__group--two-cols">
-                    <div class="registrationForm__group--two-cols__col">
-                        <label for="f_name">First Name:</label>
-                        <input type="text" name="f_name" required />
-                    </div>
-                    <div class="registrationForm__group--two-cols__col">
-                        <label for="l_name">Last Name:</label>
-                        <input type="text" name="l_name" required />
-                    </div>
-                </div>
-                <div class="registrationForm__group">
+                <div class="loginForm__group">
                     <label for="email">Email Address:</label>
                     <input type="email" name="email" required />
                 </div>
-                <div class="registrationForm__group">
+                <div class="loginForm__group">
                     <label for="password">Password:</label>
                     <input type="password" name="password" required />
                 </div>
-                <div class="registrationForm__group">
-                    <label for="profile-pic">Select profile picture:</label>
-                    <img width="100px" height="100px" src="<?= ROOT ?>/assets/img/empty-profile.webp" alt="">
-                    <input type="hidden" name="MAX_FILE_SIZE" value="500000"> <!-- Tamaño en bytes (1 MB) -->
-                    <input type="file" name="profile-pic" accept=".jpg, .jpeg, .png" />
-                </div>
-
                 <input type="submit" name="reg-submit" value="Start chatting now!" />
                 <div>
-                    <p class="registrationForm__sign-text">Already signed up?</p><a class="registrationForm__reg-link" href="<?= ROOT ?>">Login now</a>
+                    <p class="loginForm__sign-text">Not registered yet?</p><a class="loginForm__reg-link" href="<?= ROOT ?>">Signup now</a>
                 </div>
             </form>
         </section>
+        <div class="copy-box">
+            <p>Made with 💖 by </p><a class="copy-box__author" href="https://github.com/hoxuro/" target="_blank">Hoxuro</a>
+        </div>
     </main>
-    <div class="copy-box">
-        <p>Made with 💖 by </p><a class="copy-box__author" href="https://github.com/hoxuro/" target="_blank">Hoxuro</a>
-    </div>
 </body>
 
 </html>

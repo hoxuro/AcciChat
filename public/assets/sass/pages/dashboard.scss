@@ -1,0 +1,39 @@
+.logo-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.form-logo {
+  width: 100px;
+  height: 100px;
+}
+
+.error-box {
+  display: none;
+  background-color: rgb(255, 110, 110);
+  padding: 0.5rem 0.25rem;
+
+  &__text {
+    text-align: center;
+    color: rgb(114, 30, 30);
+  }
+}
+
+/*********************************
+*       COPYRIGHT                *
+*********************************/
+
+.copy-box {
+  font-size: var(--small-fs);
+  margin: 1rem 0 0.5rem 1rem;
+
+  &__author {
+    text-decoration: none;
+    color: var(--color-grey-dark-2);
+  }
+
+  p {
+    display: inline;
+  }
+}

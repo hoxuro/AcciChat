@@ -5,4 +5,7 @@
 @import "./base/typography";
 @import "./base/utilities";
 
-@import "./components/form";
+@import "./components/login-form.scss";
+@import "./components/registration-form.scss";
+
+@import "./pages/dashboard.scss";
