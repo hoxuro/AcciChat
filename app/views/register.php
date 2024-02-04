@@ -52,9 +52,9 @@
                         <rect class="cls-5" x="22" y="22" width="426.57" height="426.57" />
                     </g>
                 </svg>
+                <h1 class="heading-primary">AcciChat</h1>
             </div>
 
-            <h1 class="heading-primary">AcciChat</h1>
             <!-- LOGIN FORM -->
             <form action="#" method="post" class="registrationForm" enctype="multipart/form-data">
                 <div class="registrationForm__group">

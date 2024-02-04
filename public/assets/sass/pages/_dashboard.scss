@@ -1,12 +1,18 @@
 .dashboard {
   max-width: 120rem;
-  min-height: 90rem;
+  min-height: 100vh;
   margin: 0 auto;
   padding: 4rem 2rem;
 
   display: flex;
   align-items: center;
   align-content: center;
+
+  @include respond(phone) {
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: 2rem 1rem;
+  }
 }
 
 /*********************************
@@ -29,6 +35,7 @@
 
   @include respond(phone) {
     width: 40rem;
+    align-self: center;
   }
 
   @include respond(phone-480) {
@@ -74,18 +81,28 @@
 *********************************/
 
 .search-users-box {
-  max-width: 60rem;
-  margin: 4rem auto 0 auto;
+  width: 50rem;
+  max-width: 100%;
+  margin: 0 auto;
   padding: 4rem 2rem;
 
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 
   @include respond(phone) {
+    width: 100%;
     margin: 0 auto;
-    padding: 4rem 1rem;
+    padding: 0 1rem;
     box-shadow: none;
   }
+}
+
+.users-list {
+  height: 26rem;
+  overflow-y: auto;
+}
+.users-list::-webkit-scrollbar {
+  width: 0;
 }
 
 /*********************************
@@ -99,11 +116,24 @@
 
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+
+  @include respond(phone) {
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: none;
+  }
 }
 
 .messages-box {
   background-color: #dddddd;
   padding: 2rem;
+  height: 50rem;
+  overflow-y: auto;
+}
+
+/* Hide scrollbar */
+.messages-box::-webkit-scrollbar {
+  width: 0;
 }
 
 .text-form {
@@ -154,11 +184,14 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 .form-logo {
   width: 100px;
   height: 100px;
+  margin-right: 1rem;
 }
 
 /*********************************

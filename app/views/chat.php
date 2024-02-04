@@ -39,6 +39,12 @@
                 <div class="message">
                     <p class="message__text message__text--current">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, repellendus.</p>
                 </div>
+                <div class="message">
+                    <p class="message__text message__text--current">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, repellendus.</p>
+                </div>
+                <div class="message">
+                    <p class="message__text message__text--current">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, repellendus.</p>
+                </div>
             </div>
 
             <div class="input-text-box">
