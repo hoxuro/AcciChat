@@ -11,8 +11,8 @@
 
 <body>
     <main class="dashboard">
-        <!-- <div class="app-box"> -->
-        <div class="app">
+
+        <div class="search-users-box">
             <!-- CURRENT USER -->
             <div class="user">
                 <div class="user__info">
@@ -104,7 +104,6 @@
                 </div>
             </ul>
         </div>
-        <!-- </div> -->
 
 
     </main>

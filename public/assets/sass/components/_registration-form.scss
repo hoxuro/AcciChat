@@ -96,10 +96,6 @@
     justify-content: space-between;
     margin-bottom: 2rem;
 
-    @include respond(phone-375) {
-      display: block;
-    }
-
     &__col {
       flex: 0 0 50%;
 
@@ -139,19 +135,19 @@
     }
   }
 
-  /*************** LOGIN ****************/
+  /*************** QUERIES ****************/
 
   @include respond(phone-375) {
     &__group--two-cols {
       display: block;
-    }
 
-    &__col {
-      display: block;
-      margin-bottom: 2rem;
+      &__col {
+        margin-bottom: 2rem;
+        align-items: flex-start;
 
-      input {
-        width: 100%;
+        input {
+          width: 100%;
+        }
       }
     }
   }
