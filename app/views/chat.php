@@ -13,7 +13,7 @@
     <main class="dashboard">
         <div class="chat">
             <div class="user-chat">
-                <div class="user-chat__back-icon"></div>
+                <span class="user-chat__back-icon">&larr;</span>
                 <img width="75px" height="75px" src="<?= ROOT ?>/assets/img/empty-profile.webp" alt="">
                 <div class="user-chat__info">
                     <p class="user-chat__name">Your Name</p>
@@ -26,8 +26,18 @@
                     <p class="message__text message__text--current">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, repellendus.</p>
                 </div>
                 <div class="message message--other">
-                    <img width="40px" height="40px" src="<?= ROOT ?>/assets/img/empty-profile.webp" alt="">
+                    <img src="<?= ROOT ?>/assets/img/empty-profile.webp" alt="">
                     <p class="message__text message__text--other">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, repellendus.</p>
+                </div>
+                <div class="message message--other">
+                    <img src="<?= ROOT ?>/assets/img/empty-profile.webp" alt="">
+                    <p class="message__text message__text--other">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, repellendus.</p>
+                </div>
+                <div class="message">
+                    <p class="message__text message__text--current">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, repellendus.</p>
+                </div>
+                <div class="message">
+                    <p class="message__text message__text--current">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, repellendus.</p>
                 </div>
             </div>
 
@@ -39,7 +49,7 @@
             </div>
         </div>
     </main>
-    
+
     <div class="copy-box">
         <p>Made with 💖 by </p><a class="copy-box__author" href="https://github.com/hoxuro/" target="_blank">Hoxuro</a>
     </div>

@@ -1,7 +1,8 @@
 .dashboard {
   max-width: 120rem;
-  min-height: 100vh;
+  min-height: 90rem;
   margin: 0 auto;
+  padding: 4rem 2rem;
 
   display: flex;
   align-items: center;
@@ -9,7 +10,67 @@
 }
 
 /*********************************
-*       USERS LIST               *
+*       LOGIN FORM   PAGE        *
+*********************************/
+
+.loginForm-box {
+  width: 50rem;
+  margin: 0 auto;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+
+  .heading-primary {
+    text-align: center;
+  }
+
+  /*************** QUERIES ****************/
+
+  @include respond(phone) {
+    width: 40rem;
+  }
+
+  @include respond(phone-480) {
+    width: 35rem;
+  }
+
+  @include respond(phone-375) {
+    width: 28rem;
+  }
+}
+
+/*********************************
+*      REGISTER FROM PAGE        *
+*********************************/
+
+.registrationForm-box {
+  width: 50rem;
+  margin: 0 auto;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+
+  @include respond(phone) {
+    width: 40rem;
+  }
+
+  @include respond(phone-480) {
+    width: 35rem;
+  }
+
+  @include respond(phone-375) {
+    width: 28rem;
+  }
+
+  .heading-primary {
+    text-align: center;
+  }
+}
+
+/*********************************
+*       USERS SEARCH PAGE        *
 *********************************/
 
 .search-users-box {
@@ -24,6 +85,64 @@
     margin: 0 auto;
     padding: 4rem 1rem;
     box-shadow: none;
+  }
+}
+
+/*********************************
+*       CHAT PAGE                *
+*********************************/
+
+.chat {
+  max-width: 60rem;
+  width: 100%;
+  margin: 0 auto;
+
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.messages-box {
+  background-color: #dddddd;
+  padding: 2rem;
+}
+
+.text-form {
+  padding: 1rem 0;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+
+  input {
+    padding: 0.5rem 1rem;
+    border: none;
+  }
+
+  input[type="text"] {
+    flex: 1;
+    font-size: var(--default-fs);
+    margin-right: auto;
+    padding: 1rem 0.5rem;
+    border-radius: 5px;
+    border: 1px solid var(--color-black);
+    margin-right: 0.5rem;
+    color: var(--color-grey-dark-3);
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  input[type="submit"] {
+    font-size: var(--default-fs);
+    cursor: pointer;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    transition: all 0.3s;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: var(--color-primary-dark);
+    }
   }
 }
 
@@ -54,23 +173,5 @@
   &__text {
     text-align: center;
     color: rgb(114, 30, 30);
-  }
-}
-
-/*********************************
-*       COPYRIGHT                *
-*********************************/
-
-.copy-box {
-  font-size: var(--small-fs);
-  margin: 4rem 0 0.5rem 2rem;
-
-  &__author {
-    text-decoration: none;
-    color: var(--color-grey-dark-2);
-  }
-
-  p {
-    display: inline;
   }
 }

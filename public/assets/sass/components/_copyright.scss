@@ -1,0 +1,13 @@
+.copy-box {
+  font-size: var(--small-fs);
+  margin: 4rem 0 0.5rem 2rem;
+
+  &__author {
+    text-decoration: none;
+    color: var(--color-grey-dark-2);
+  }
+
+  p {
+    display: inline;
+  }
+}

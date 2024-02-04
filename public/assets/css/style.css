@@ -73,27 +73,14 @@ body {
   font-size: var(--default-font-size);
   hyphens: auto; }
 
-/*********************************
-*           LOGIN FORM           *
-*********************************/
-.loginForm-box {
-  width: 50rem;
-  margin: 0 auto;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  /*************** QUERIES ****************/ }
-  .loginForm-box .heading-primary {
-    text-align: center; }
-  @media only screen and (max-width: 37.5em) {
-    .loginForm-box {
-      width: 40rem; } }
-  @media only screen and (max-width: 30em) {
-    .loginForm-box {
-      width: 35rem; } }
-  @media only screen and (max-width: 23.44em) {
-    .loginForm-box {
-      width: 28rem; } }
+.copy-box {
+  font-size: var(--small-fs);
+  margin: 4rem 0 0.5rem 2rem; }
+  .copy-box__author {
+    text-decoration: none;
+    color: var(--color-grey-dark-2); }
+  .copy-box p {
+    display: inline; }
 
 .loginForm label {
   color: var(--color-grey-dark-2); }
@@ -143,27 +130,6 @@ body {
   font-size: var(--small-fs); }
   .loginForm__reg-link:hover, .loginForm__reg-link:active {
     color: var(--color-primary-dark); }
-
-/*********************************
-  *        REGISTRATION FORM       *
-  *********************************/
-.registrationForm-box {
-  width: 50rem;
-  margin: 0 auto;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center; }
-  @media only screen and (max-width: 37.5em) {
-    .registrationForm-box {
-      width: 40rem; } }
-  @media only screen and (max-width: 30em) {
-    .registrationForm-box {
-      width: 35rem; } }
-  @media only screen and (max-width: 23.44em) {
-    .registrationForm-box {
-      width: 28rem; } }
-  .registrationForm-box .heading-primary {
-    text-align: center; }
 
 .registrationForm {
   /*************** QUERIES ****************/ }
@@ -304,7 +270,8 @@ body {
   border: var(--line);
   border-radius: 5px;
   padding: 1rem;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: all 0.3s; }
   .user-sm:hover {
     background-color: var(--color-grey-light-1); }
   .user-sm__info {
@@ -369,24 +336,102 @@ body {
       .search-form input[type="submit"] {
         margin-top: 2rem; } }
 
-.chat {
-  max-width: 60rem;
-  width: 100%;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); }
+.user-chat {
+  padding: 1rem 0.5rem;
+  display: flex;
+  align-items: center;
+  align-content: center; }
+  .user-chat img {
+    margin: 0 2rem;
+    border-radius: 5px; }
+  .user-chat__name {
+    color: var(--color-grey-dark-2); }
+  .user-chat__activity {
+    color: var(--color-grey-dark-4); }
+
+.message {
+  max-width: 80%;
+  margin: 2rem 0;
+  /* Styles for current user */
+  text-align: right;
+  margin-left: auto; }
+  .message--other {
+    border-radius: 12px 12px 12px 0px;
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+    /* position recipient image */
+    display: flex;
+    align-items: flex-end; }
+  .message__text {
+    color: var(--color-white);
+    border-radius: 12px 12px 0 12px;
+    background-color: var(--color-primary);
+    padding: 1rem; }
+    .message__text--other {
+      border-radius: 12px 12px 12px 0px;
+      color: var(--color-grey-dark-2);
+      background-color: var(--color-white); }
+  .message img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 1rem; }
 
 .dashboard {
   max-width: 120rem;
-  min-height: 100vh;
+  min-height: 90rem;
   margin: 0 auto;
+  padding: 4rem 2rem;
   display: flex;
   align-items: center;
   align-content: center; }
 
 /*********************************
-*       USERS LIST               *
+*       LOGIN FORM   PAGE        *
+*********************************/
+.loginForm-box {
+  width: 50rem;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  /*************** QUERIES ****************/ }
+  .loginForm-box .heading-primary {
+    text-align: center; }
+  @media only screen and (max-width: 37.5em) {
+    .loginForm-box {
+      width: 40rem; } }
+  @media only screen and (max-width: 30em) {
+    .loginForm-box {
+      width: 35rem; } }
+  @media only screen and (max-width: 23.44em) {
+    .loginForm-box {
+      width: 28rem; } }
+
+/*********************************
+*      REGISTER FROM PAGE        *
+*********************************/
+.registrationForm-box {
+  width: 50rem;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center; }
+  @media only screen and (max-width: 37.5em) {
+    .registrationForm-box {
+      width: 40rem; } }
+  @media only screen and (max-width: 30em) {
+    .registrationForm-box {
+      width: 35rem; } }
+  @media only screen and (max-width: 23.44em) {
+    .registrationForm-box {
+      width: 28rem; } }
+  .registrationForm-box .heading-primary {
+    text-align: center; }
+
+/*********************************
+*       USERS SEARCH PAGE        *
 *********************************/
 .search-users-box {
   max-width: 60rem;
@@ -399,6 +444,49 @@ body {
       margin: 0 auto;
       padding: 4rem 1rem;
       box-shadow: none; } }
+
+/*********************************
+*       CHAT PAGE                *
+*********************************/
+.chat {
+  max-width: 60rem;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); }
+
+.messages-box {
+  background-color: #dddddd;
+  padding: 2rem; }
+
+.text-form {
+  padding: 1rem 0;
+  width: 80%;
+  margin: 0 auto;
+  display: flex; }
+  .text-form input {
+    padding: 0.5rem 1rem;
+    border: none; }
+  .text-form input[type="text"] {
+    flex: 1;
+    font-size: var(--default-fs);
+    margin-right: auto;
+    padding: 1rem 0.5rem;
+    border-radius: 5px;
+    border: 1px solid var(--color-black);
+    margin-right: 0.5rem;
+    color: var(--color-grey-dark-3); }
+    .text-form input[type="text"]:focus {
+      outline: none; }
+  .text-form input[type="submit"] {
+    font-size: var(--default-fs);
+    cursor: pointer;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    transition: all 0.3s;
+    border-radius: 5px; }
+    .text-form input[type="submit"]:hover {
+      background-color: var(--color-primary-dark); }
 
 /*********************************
 *       LOGO                     *
@@ -422,15 +510,3 @@ body {
   .error-box__text {
     text-align: center;
     color: #721e1e; }
-
-/*********************************
-*       COPYRIGHT                *
-*********************************/
-.copy-box {
-  font-size: var(--small-fs);
-  margin: 4rem 0 0.5rem 2rem; }
-  .copy-box__author {
-    text-decoration: none;
-    color: var(--color-grey-dark-2); }
-  .copy-box p {
-    display: inline; }
