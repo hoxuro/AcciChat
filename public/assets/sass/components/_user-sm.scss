@@ -1,0 +1,59 @@
+.user-sm {
+  max-width: 45rem;
+  margin: 2rem auto;
+  display: flex;
+  border: var(--line);
+  border-radius: 5px;
+  padding: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-grey-light-1);
+  }
+
+  &__info {
+    margin-right: auto;
+
+    display: flex;
+    align-items: center;
+    align-content: center;
+  }
+
+  img {
+    border-radius: 5px;
+    margin-right: 1rem;
+    width: 60px;
+    height: 60px;
+  }
+
+  &__name {
+    color: var(--color-grey-dark-2);
+  }
+
+  &__last-mess {
+    color: var(--color-grey-dark-4);
+    font-size: var(--small-fs);
+  }
+
+  &__status-box {
+    display: flex;
+    align-items: center;
+    align-content: center;
+  }
+
+  &__status {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+
+    &--online {
+      background-color: green;
+    }
+
+    &--offline {
+      background-color: var(--color-grey-dark-4);
+    }
+  }
+}

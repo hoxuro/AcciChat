@@ -12,60 +12,98 @@
 <body>
     <main class="dashboard">
         <div class="app-box">
-            <!-- CURRENT USER -->
-            <div class="user">
-                <div class="user__info">
-                    <img width="75px" height="75px" src="<?= ROOT ?>/assets/img/empty-profile.png" alt="">
-                    <div class="user__text-box">
-                        <p class="user__name">Your Name</p>
-                        <p class="user__status">Active now</p>
+            <div class="app">
+                <!-- CURRENT USER -->
+                <div class="user">
+                    <div class="user__info">
+                        <img src="<?= ROOT ?>/assets/img/empty-profile.webp" alt="">
+                        <div class="user__text-box">
+                            <p class="user__name">Your Name</p>
+                            <p class="user__activity">Active now</p>
+                        </div>
+                    </div>
+                    <div class="user__btn-box">
+                        <button class="user__btn">Logout</button>
                     </div>
                 </div>
-                <button class="btn btn--logout">Logout</button>
+
+                <!-- SEARCH FORM -->
+                <form class="search-form" action="#" method="post">
+                    <input type="text" name="username" placeholder="Enter a name to search..." />
+                    <div class="search__btn-box">
+                        <input type="submit" name="search" value="Search" />
+                    </div>
+                </form>
+
+                <!-- USER LIST -->
+                <ul class="users-list">
+                    <!-- USER -->
+                    <div class="user-sm">
+                        <div class="user-sm__info">
+                            <img src="<?= ROOT ?>/assets/img/empty-profile.webp" alt="">
+                            <div class="user-sm__text-box">
+                                <p class="user-sm__name">Your Name</p>
+                                <p class="user-sm__last-mess">This is a text...</p>
+                            </div>
+                        </div>
+                        <div class="user-sm__status-box">
+                            <div class="user-sm__status  user-sm__status--online"></div>
+                        </div>
+                    </div>
+                    <!-- USER -->
+                    <div class="user-sm">
+                        <div class="user-sm__info">
+                            <img src="<?= ROOT ?>/assets/img/empty-profile.webp" alt="">
+                            <div class="user-sm__text-box">
+                                <p class="user-sm__name">Your Name</p>
+                                <p class="user-sm__last-mess">This is a text...</p>
+                            </div>
+                        </div>
+                        <div class="user-sm__status-box">
+                            <div class="user-sm__status  user-sm__status--offline"></div>
+                        </div>
+                    </div>
+                    <!-- USER -->
+                    <div class="user-sm">
+                        <div class="user-sm__info">
+                            <img src="<?= ROOT ?>/assets/img/empty-profile.webp" alt="">
+                            <div class="user-sm__text-box">
+                                <p class="user-sm__name">Your Name</p>
+                                <p class="user-sm__last-mess">This is a text...</p>
+                            </div>
+                        </div>
+                        <div class="user-sm__status-box">
+                            <div class="user-sm__status  user-sm__status--online"></div>
+                        </div>
+                    </div>
+                    <!-- USER -->
+                    <div class="user-sm">
+                        <div class="user-sm__info">
+                            <img src="<?= ROOT ?>/assets/img/empty-profile.webp" alt="">
+                            <div class="user-sm__text-box">
+                                <p class="user-sm__name">Your Name</p>
+                                <p class="user-sm__last-mess">This is a text...</p>
+                            </div>
+                        </div>
+                        <div class="user-sm__status-box">
+                            <div class="user-sm__status  user-sm__status--online"></div>
+                        </div>
+                    </div>
+                    <!-- USER -->
+                    <div class="user-sm">
+                        <div class="user-sm__info">
+                            <img src="<?= ROOT ?>/assets/img/empty-profile.webp" alt="">
+                            <div class="user-sm__text-box">
+                                <p class="user-sm__name">Your Name</p>
+                                <p class="user-sm__last-mess">This is a text...</p>
+                            </div>
+                        </div>
+                        <div class="user-sm__status-box">
+                            <div class="user-sm__status  user-sm__status--online"></div>
+                        </div>
+                    </div>
+                </ul>
             </div>
-
-            <!-- SEARCH FORM -->
-            <form class="search-form" action="#" method="post">
-                <input type="text" name="username" placeholder="Enter a name to search..." />
-                <input type="submit" name="search" value="Search" />
-            </form>
-
-            <!-- USER LIST -->
-            <ul class="users-list">
-                <!-- USER -->
-                <div class="user-sm">
-                    <div class="user-sm__info">
-                        <img width="75px" height="75px" src="<?= ROOT ?>/assets/img/empty-profile.png" alt="">
-                        <div class="user-sm__text-box">
-                            <p class="user-sm__name">Your Name</p>
-                            <p class="user-sm__status">This is a text message</p>
-                        </div>
-                    </div>
-                    <div class="user-sm__status">i</div>
-                </div>
-                <!-- USER -->
-                <div class="user-sm">
-                    <div class="user-sm__info">
-                        <img width="75px" height="75px" src="<?= ROOT ?>/assets/img/empty-profile.png" alt="">
-                        <div class="user-sm__text-box">
-                            <p class="user-sm__name">Your Name</p>
-                            <p class="user-sm__status">This is a text message</p>
-                        </div>
-                    </div>
-                    <div class="user-sm__status">i</div>
-                </div>
-                <!-- USER -->
-                <div class="user-sm">
-                    <div class="user-sm__info">
-                        <img width="75px" height="75px" src="<?= ROOT ?>/assets/img/empty-profile.png" alt="">
-                        <div class="user-sm__text-box">
-                            <p class="user-sm__name">Your Name</p>
-                            <p class="user-sm__status">This is a text message</p>
-                        </div>
-                    </div>
-                    <div class="user-sm__status">i</div>
-                </div>
-            </ul>
         </div>
 
 
