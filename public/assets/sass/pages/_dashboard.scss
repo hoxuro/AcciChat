@@ -1,3 +1,14 @@
+.dashboard {
+  max-width: 120rem;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
 .logo-box {
   width: 100%;
   display: flex;
@@ -26,7 +37,7 @@
 
 .copy-box {
   font-size: var(--small-fs);
-  margin: 0 0 0.5rem 2rem;
+  margin: 4rem 0 0.5rem 2rem;
 
   &__author {
     text-decoration: none;

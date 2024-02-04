@@ -38,11 +38,11 @@
                 </form>
             </div>
         </div>
-
-        <div class="copy-box">
-            <p>Made with 💖 by </p><a class="copy-box__author" href="https://github.com/hoxuro/" target="_blank">Hoxuro</a>
-        </div>
     </main>
+    
+    <div class="copy-box">
+        <p>Made with 💖 by </p><a class="copy-box__author" href="https://github.com/hoxuro/" target="_blank">Hoxuro</a>
+    </div>
 </body>
 
 </html>

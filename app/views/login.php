@@ -11,7 +11,7 @@
 
 <body>
     <main class="dashboard">
-        <section class="section-loginForm">
+        <div class="loginForm-box">
             <div class="logo-box">
                 <svg class="form-logo" id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 470.57 470.57">
                     <defs>
@@ -75,11 +75,11 @@
                     <p class="loginForm__sign-text">Not registered yet?</p><a class="loginForm__reg-link" href="<?= ROOT ?>">Signup now</a>
                 </div>
             </form>
-        </section>
-        <div class="copy-box">
-            <p>Made with 💖 by </p><a class="copy-box__author" href="https://github.com/hoxuro/" target="_blank">Hoxuro</a>
         </div>
     </main>
+    <div class="copy-box">
+        <p>Made with 💖 by </p><a class="copy-box__author" href="https://github.com/hoxuro/" target="_blank">Hoxuro</a>
+    </div>
 </body>
 
 </html>
