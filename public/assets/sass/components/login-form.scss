@@ -1,0 +1,101 @@
+/*********************************
+*           LOGIN FORM           *
+*********************************/
+
+.section-loginForm {
+  width: 50rem;
+  height: 90rem;
+
+  margin: 0 auto;
+  padding: 2rem 1rem;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+
+  @include respond(phone) {
+    width: 40rem;
+  }
+
+  @include respond(phone-480) {
+    width: 35rem;
+  }
+
+  @include respond(phone-375) {
+    width: 28rem;
+  }
+
+  .heading-primary {
+    text-align: center;
+  }
+}
+
+.loginForm {
+  label {
+    color: var(--color-grey-dark-2);
+  }
+
+  input {
+    font-family: var(--family-primary);
+    font-size: var(--default-fs);
+    padding: 0.5rem 0.25rem;
+
+    outline: none;
+    border: none;
+    background: none;
+    border-bottom: var(--line-2);
+
+    &:focus {
+      outline: none;
+      border-bottom: 2px solid var(--color-primary);
+    }
+
+    &:focus:invalid {
+      border-bottom: 2px solid red;
+    }
+  }
+
+  input[type="submit"] {
+    width: 100%;
+    font-family: var(--family-primary);
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 500;
+    border: none;
+    transition: all 0.3s;
+    margin-bottom: 2rem;
+
+    &:hover,
+    &:active {
+      background-color: var(--color-primary-dark);
+    }
+  }
+
+  &__group {
+    display: flex;
+    flex-flow: column nowrap;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__sign-text {
+    display: inline-block;
+    margin-right: 1rem;
+    font-size: var(--small-fs);
+  }
+
+  &__reg-link {
+    text-decoration: none;
+    color: var(--color-grey-dark-4);
+    font-size: var(--small-fs);
+
+    &:hover,
+    &:active {
+      color: var(--color-primary-dark);
+    }
+  }
+}

@@ -1,0 +1,152 @@
+/*********************************
+  *        REGISTRATION FORM       *
+  *********************************/
+
+.section-registrationForm {
+  width: 50rem;
+  height: 90rem;
+  margin: 0 auto;
+  padding-top: 2rem;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+
+  @include respond(phone) {
+    width: 40rem;
+  }
+
+  @include respond(phone-480) {
+    width: 35rem;
+  }
+
+  @include respond(phone-375) {
+    width: 28rem;
+  }
+
+  .heading-primary {
+    text-align: center;
+  }
+}
+
+.registrationForm {
+  label {
+    color: var(--color-grey-dark-2);
+  }
+
+  input {
+    font-family: var(--family-primary);
+    font-size: var(--default-fs);
+
+    width: 100%;
+    outline: none;
+    border: none;
+    background: none;
+    border-bottom: var(--line-2);
+
+    &:focus {
+      outline: none;
+      border-bottom: 2px solid var(--color-primary);
+    }
+
+    &:focus:invalid {
+      border-bottom: 2px solid red;
+    }
+  }
+
+  input[type="submit"] {
+    width: 100%;
+    font-family: var(--family-primary);
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 500;
+    border: none;
+    transition: all 0.3s;
+    margin-bottom: 2rem;
+
+    &:hover,
+    &:active {
+      background-color: var(--color-primary-dark);
+    }
+  }
+
+  input[type="file"] {
+    border: none;
+    margin-top: 1rem;
+  }
+
+  img {
+    margin: 1rem 0;
+  }
+
+  &__group {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__group--two-cols {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+    @include respond(phone-375) {
+      display: block;
+    }
+
+    &__col {
+      flex: 0 0 50%;
+
+      display: flex;
+      flex-flow: column nowrap;
+
+      @include respond(phone-375) {
+        display: block;
+        margin-bottom: 2rem;
+      }
+
+      label {
+        text-align: center;
+      }
+
+      input {
+        width: 90%;
+
+        @include respond(phone-375) {
+          width: 100%;
+        }
+      }
+    }
+
+    &__col:last-child {
+      input {
+        align-self: flex-end;
+      }
+    }
+  }
+
+  &__sign-text {
+    display: inline-block;
+    margin-right: 1rem;
+    font-size: var(--small-fs);
+  }
+
+  &__reg-link {
+    text-decoration: none;
+    color: var(--color-grey-dark-4);
+    font-size: var(--small-fs);
+
+    &:hover,
+    &:active {
+      color: var(--color-primary-dark);
+    }
+  }
+}

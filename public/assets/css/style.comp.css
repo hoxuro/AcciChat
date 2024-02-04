@@ -1,3 +1,20 @@
+/*
+0 - 600px:  Phone
+600 - 900px:  Tablet portrait
+900 - 1200px:  Tablet landscape
+[1200 - 1800] normal styles
+1800px + :  Big Desktop
+
+---------------------
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + Typography > general layout + grid > page layout > components
+*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 @import url("@fortawesome/fontawesome-free/css/all.min.css");
 :root {
@@ -52,25 +69,11 @@ body {
   font-size: var(--default-font-size);
   hyphens: auto; }
 
-.dashboard {
-  height: 100vh;
-  position: relative; }
-
-.error-box {
-  background-color: #ff6e6e;
-  padding: 0.5rem 0.25rem; }
-  .error-box__text {
-    text-align: center;
-    color: #721e1e; }
-
 /*********************************
 *           LOGIN FORM           *
 *********************************/
 .section-loginForm {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
+  padding: 0 1rem; }
   .section-loginForm .heading-primary {
     text-align: center; }
 
@@ -78,6 +81,15 @@ body {
   width: 50rem;
   margin: 0 auto;
   padding-top: 2rem; }
+  @media only screen and (max-width: 37.5em) {
+    .loginForm {
+      width: 40rem; } }
+  @media only screen and (max-width: 30em) {
+    .loginForm {
+      width: 35rem; } }
+  @media only screen and (max-width: 23.44em) {
+    .loginForm {
+      width: 28rem; } }
   .loginForm label {
     color: var(--color-grey-dark-2); }
   .loginForm input {
@@ -123,91 +135,132 @@ body {
       color: var(--color-primary-dark); }
 
 /*********************************
-*        REGISTRATION FORM       *
-*********************************/
+  *        REGISTRATION FORM       *
+  *********************************/
 .section-registrationForm {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
-  .section-registrationForm .heading-primary {
-    text-align: center; }
-
-.registrationForm {
   width: 50rem;
   margin: 0 auto;
   padding-top: 2rem; }
-  .registrationForm label {
-    color: var(--color-grey-dark-2); }
-  .registrationForm input {
-    font-family: var(--family-primary);
-    font-size: var(--default-fs);
-    width: 100%;
+  @media only screen and (max-width: 37.5em) {
+    .section-registrationForm {
+      width: 40rem; } }
+  @media only screen and (max-width: 30em) {
+    .section-registrationForm {
+      width: 35rem; } }
+  @media only screen and (max-width: 23.44em) {
+    .section-registrationForm {
+      width: 28rem; } }
+  .section-registrationForm .heading-primary {
+    text-align: center; }
+
+.registrationForm label {
+  color: var(--color-grey-dark-2); }
+
+.registrationForm input {
+  font-family: var(--family-primary);
+  font-size: var(--default-fs);
+  width: 100%;
+  outline: none;
+  border: none;
+  background: none;
+  border-bottom: var(--line-2); }
+  .registrationForm input:focus {
     outline: none;
-    border: none;
-    background: none;
-    border-bottom: var(--line-2); }
-    .registrationForm input:focus {
-      outline: none;
-      border-bottom: 2px solid var(--color-primary); }
-    .registrationForm input:focus:invalid {
-      border-bottom: 2px solid red; }
-  .registrationForm input[type="submit"] {
-    width: 100%;
-    font-family: var(--family-primary);
-    padding: 1rem 1.5rem;
-    cursor: pointer;
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    font-weight: 500;
-    border: none;
-    transition: all 0.3s;
+    border-bottom: 2px solid var(--color-primary); }
+  .registrationForm input:focus:invalid {
+    border-bottom: 2px solid red; }
+
+.registrationForm input[type="submit"] {
+  width: 100%;
+  font-family: var(--family-primary);
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-weight: 500;
+  border: none;
+  transition: all 0.3s;
+  margin-bottom: 2rem; }
+  .registrationForm input[type="submit"]:hover, .registrationForm input[type="submit"]:active {
+    background-color: var(--color-primary-dark); }
+
+.registrationForm input[type="file"] {
+  border: none;
+  margin-top: 1rem; }
+
+.registrationForm img {
+  margin: 1rem 0; }
+
+.registrationForm__group {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap; }
+  .registrationForm__group:not(:last-child) {
     margin-bottom: 2rem; }
-    .registrationForm input[type="submit"]:hover, .registrationForm input[type="submit"]:active {
-      background-color: var(--color-primary-dark); }
-  .registrationForm input[type="file"] {
-    border: none;
-    margin-top: 1rem; }
-  .registrationForm__group {
-    width: 100%;
+
+.registrationForm__group--two-cols {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-bottom: 2rem; }
+  @media only screen and (max-width: 23.44em) {
+    .registrationForm__group--two-cols {
+      display: block; } }
+  .registrationForm__group--two-cols__col {
+    flex: 0 0 50%;
     display: flex;
     flex-flow: column nowrap; }
-    .registrationForm__group:not(:last-child) {
-      margin-bottom: 2rem; }
-  .registrationForm__group--two-cols {
-    width: 100%;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    margin-bottom: 2rem; }
-    .registrationForm__group--two-cols__col {
-      flex: 0 0 50%;
-      display: flex;
-      flex-flow: column nowrap; }
-      .registrationForm__group--two-cols__col label {
-        text-align: center; }
-      .registrationForm__group--two-cols__col input {
-        width: 90%; }
-    .registrationForm__group--two-cols__col:last-child input {
-      align-self: flex-end; }
-  .registrationForm__sign-text {
-    display: inline-block;
-    margin-right: 1rem;
-    font-size: var(--small-fs); }
-  .registrationForm__reg-link {
-    text-decoration: none;
-    color: var(--color-grey-dark-4);
-    font-size: var(--small-fs); }
-    .registrationForm__reg-link:hover, .registrationForm__reg-link:active {
-      color: var(--color-primary-dark); }
+    @media only screen and (max-width: 23.44em) {
+      .registrationForm__group--two-cols__col {
+        display: block;
+        margin-bottom: 2rem; } }
+    .registrationForm__group--two-cols__col label {
+      text-align: center; }
+    .registrationForm__group--two-cols__col input {
+      width: 90%; }
+      @media only screen and (max-width: 23.44em) {
+        .registrationForm__group--two-cols__col input {
+          width: 100%; } }
+  .registrationForm__group--two-cols__col:last-child input {
+    align-self: flex-end; }
+
+.registrationForm__sign-text {
+  display: inline-block;
+  margin-right: 1rem;
+  font-size: var(--small-fs); }
+
+.registrationForm__reg-link {
+  text-decoration: none;
+  color: var(--color-grey-dark-4);
+  font-size: var(--small-fs); }
+  .registrationForm__reg-link:hover, .registrationForm__reg-link:active {
+    color: var(--color-primary-dark); }
+
+.logo-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0; }
+
+.form-logo {
+  width: 100px;
+  height: 100px; }
+
+.error-box {
+  display: none;
+  background-color: #ff6e6e;
+  padding: 0.5rem 0.25rem; }
+  .error-box__text {
+    text-align: center;
+    color: #721e1e; }
 
 /*********************************
 *       COPYRIGHT                *
 *********************************/
 .copy-box {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  text-align: center;
+  margin-top: 9rem;
   padding: 1rem;
   font-size: var(--small-fs); }
   .copy-box__author {
