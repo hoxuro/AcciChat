@@ -74,9 +74,9 @@ body {
 *********************************/
 .section-loginForm {
   width: 50rem;
-  height: 90rem;
+  height: 80rem;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 1rem;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center; }
@@ -146,9 +146,9 @@ body {
   *********************************/
 .section-registrationForm {
   width: 50rem;
-  height: 90rem;
+  height: 80rem;
   margin: 0 auto;
-  padding-top: 2rem;
+  padding: 1rem;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center; }
@@ -270,7 +270,7 @@ body {
 *********************************/
 .copy-box {
   font-size: var(--small-fs);
-  margin: 1rem 0 0.5rem 1rem; }
+  margin: 0 0 0.5rem 2rem; }
   .copy-box__author {
     text-decoration: none;
     color: var(--color-grey-dark-2); }
