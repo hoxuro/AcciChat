@@ -1,0 +1,19 @@
+.user-chat {
+  padding: 1rem 0.5rem;
+  display: flex;
+  align-items: center;
+  align-content: center;
+
+  img {
+    margin: 0 2rem;
+    border-radius: 5px;
+  }
+
+  &__name {
+    color: var(--color-grey-dark-2);
+  }
+
+  &__activity {
+    color: var(--color-grey-dark-4);
+  }
+}

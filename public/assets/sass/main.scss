@@ -5,11 +5,13 @@
 @import "./base/typography";
 @import "./base/utilities";
 
+@import "./components/copyright";
 @import "./components/login-form";
 @import "./components/registration-form";
 @import "./components/user";
 @import "./components/user-sm";
 @import "./components/search";
-@import "./components/chat";
+@import "./components/user-chat";
+@import "./components/message";
 
 @import "./pages/dashboard";
