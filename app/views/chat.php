@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <main class="dashboard">
+    <main class="chat-box">
         <div class="chat">
             <div class="user-chat">
                 <span class="user-chat__back-icon">&larr;</span>
@@ -55,10 +55,6 @@
             </div>
         </div>
     </main>
-
-    <div class="copy-box">
-        <p>Made with 💖 by </p><a class="copy-box__author" href="https://github.com/hoxuro/" target="_blank">Hoxuro</a>
-    </div>
 </body>
 
 </html>

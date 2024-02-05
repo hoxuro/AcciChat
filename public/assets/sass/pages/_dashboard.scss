@@ -47,6 +47,31 @@
   }
 }
 
+.password-box {
+  display: flex;
+  position: relative;
+
+  input {
+    flex: 1;
+  }
+
+  .icon {
+    font-size: 2.8rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    padding: 1rem 0.5rem;
+    z-index: 10;
+    color: var(--color-grey-dark-4);
+    display: none;
+  }
+
+  .icon-active {
+    display: inline-block;
+  }
+}
+
 /*********************************
 *      REGISTER FROM PAGE        *
 *********************************/
@@ -100,6 +125,10 @@
 .users-list {
   height: 26rem;
   overflow-y: auto;
+
+  @include respond(phone) {
+    height: 38rem;
+  }
 }
 .users-list::-webkit-scrollbar {
   width: 0;
@@ -108,6 +137,23 @@
 /*********************************
 *       CHAT PAGE                *
 *********************************/
+
+.chat-box {
+  max-width: 120rem;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+
+  display: flex;
+  align-items: center;
+  align-content: center;
+
+  @include respond(phone) {
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: 0;
+  }
+}
 
 .chat {
   max-width: 60rem;
@@ -129,6 +175,10 @@
   padding: 2rem;
   height: 50rem;
   overflow-y: auto;
+
+  @include respond(phone) {
+    padding: 1rem;
+  }
 }
 
 /* Hide scrollbar */

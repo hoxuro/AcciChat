@@ -7,6 +7,8 @@
     <title>AcciChat</title>
     <link rel="stylesheet" href="<?= ROOT ?>/assets/css/reset.css">
     <link rel="stylesheet" href="<?= ROOT ?>/assets/css/style.css">
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/40f0f4d55f.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -67,8 +69,13 @@
                     <input type="email" name="email" required />
                 </div>
                 <div class="loginForm__group">
-                    <label for="password">Password:</label>
-                    <input type="password" name="password" required />
+                    <label for="password">Password: </label>
+                    <div class="password-box">
+                        <input type="password" name="password" required />
+                        <span class="icon icon-eye fas fa-eye icon-active"></span>
+                        <span class="icon icon-eye-slash fas fa-eye-slash"></span>
+                    </div>
+
                 </div>
                 <input type="submit" name="reg-submit" value="Start chatting now!" />
                 <div>
@@ -80,6 +87,8 @@
     <div class="copy-box">
         <p>Made with 💖 by </p><a class="copy-box__author" href="https://github.com/hoxuro/" target="_blank">Hoxuro</a>
     </div>
+
+    <script src="<?= ROOT ?>/assets/js/show-hide-pass.js"></script>
 </body>
 
 </html>
