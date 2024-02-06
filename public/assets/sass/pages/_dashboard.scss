@@ -141,6 +141,10 @@
     flex: 0 0 65%;
     width: 100%;
   }
+
+  @include respond(phone-375) {
+    flex: 0 0 60%;
+  }
 }
 .users-list::-webkit-scrollbar {
   width: 0;
