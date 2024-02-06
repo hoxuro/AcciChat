@@ -7,6 +7,8 @@
     <title>AcciChat</title>
     <link rel="stylesheet" href="<?= ROOT ?>/assets/css/reset.css">
     <link rel="stylesheet" href="<?= ROOT ?>/assets/css/style.css">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -78,7 +80,11 @@
                 </div>
                 <div class="registrationForm__group">
                     <label for="password">Password:</label>
-                    <input type="password" name="password" required />
+                    <div class="password-box">
+                        <input type="password" name="password" required />
+                        <span class="icon icon-eye fas fa-eye icon-active"></span>
+                        <span class="icon icon-eye-slash fas fa-eye-slash"></span>
+                    </div>
                 </div>
                 <div class="registrationForm__group">
                     <label for="profile-pic">Select profile picture:</label>
@@ -97,6 +103,8 @@
     <div class="copy-box">
         <p>Made with 💖 by </p><a class="copy-box__author" href="https://github.com/hoxuro/" target="_blank">Hoxuro</a>
     </div>
+
+    <script src="<?= ROOT ?>/assets/js/show-hide-pass.js"></script>
 </body>
 
 </html>

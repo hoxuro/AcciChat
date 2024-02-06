@@ -4,8 +4,15 @@
   align-items: center;
   align-content: center;
 
+  &__btn-back {
+    padding: 0.5rem 1rem;
+    color: var(--color-grey-dark-3);
+  }
+
   img {
-    margin: 0 2rem;
+    width: 75px;
+    height: 75px;
+    margin: 0 2rem 0 1rem;
     border-radius: 5px;
   }
 
@@ -15,5 +22,10 @@
 
   &__activity {
     color: var(--color-grey-dark-4);
+  }
+
+  @include respond(phone) {
+    flex: 0 0 15%;
+    width: 100%;
   }
 }
