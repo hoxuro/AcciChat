@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AcciChat</title>
-    <link rel="stylesheet" href="<?= ROOT ?>/assets/css/reset.css">
-    <link rel="stylesheet" href="<?= ROOT ?>/assets/css/style.css">
-    <!-- FONT AWESOME -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+require_once(__DIR__ . '/inc/header.php');
+?>
 
 <body>
     <main class="dashboard">
@@ -77,9 +69,9 @@
                     </div>
 
                 </div>
-                <input type="submit" name="reg-submit" value="Start chatting now!" />
+                <input class="btn-send" type="submit" name="reg-submit" value="Start chatting now!" />
                 <div>
-                    <p class="loginForm__sign-text">Not registered yet?</p><a class="loginForm__reg-link" href="<?= ROOT ?>">Signup now</a>
+                    <p class="loginForm__sign-text">Not registered yet?</p><a class="loginForm__reg-link" href="http://localhost/accichat/home/register">Signup now</a>
                 </div>
             </form>
         </div>
@@ -89,6 +81,7 @@
     </div>
 
     <script src="<?= ROOT ?>/assets/js/show-hide-pass.js"></script>
+    <script src="<?= ROOT ?>/assets/js/login.js"></script>
 </body>
 
 </html>

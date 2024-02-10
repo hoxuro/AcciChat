@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AcciChat</title>
-    <link rel="stylesheet" href="<?= ROOT ?>/assets/css/reset.css">
-    <link rel="stylesheet" href="<?= ROOT ?>/assets/css/style.css">
-    <!-- FONT AWESOME -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+require_once(__DIR__ . '/inc/header.php');
+?>
 
 <body>
     <main class="dashboard">
@@ -90,12 +82,12 @@
                     <label for="profile-pic">Select profile picture:</label>
                     <img width="100px" height="100px" src="<?= ROOT ?>/assets/img/empty-profile.webp" alt="">
                     <input type="hidden" name="MAX_FILE_SIZE" value="500000"> <!-- Tamaño en bytes (1 MB) -->
-                    <input type="file" name="profile-pic" accept=".jpg, .jpeg, .png" />
+                    <input type="file" name="profile_pic" accept=".jpg, .jpeg, .png" />
                 </div>
 
-                <input type="submit" name="reg-submit" value="Start chatting now!" />
+                <input class="btn-send" type="submit" name="reg-submit" value="Start chatting now!" />
                 <div>
-                    <p class="registrationForm__sign-text">Already signed up?</p><a class="registrationForm__reg-link" href="<?= ROOT ?>">Login now</a>
+                    <p class="registrationForm__sign-text">Already signed up?</p><a href="http://localhost/accichat" class="registrationForm__reg-link">Login now</a>
                 </div>
             </form>
         </div>
@@ -105,6 +97,7 @@
     </div>
 
     <script src="<?= ROOT ?>/assets/js/show-hide-pass.js"></script>
+    <script src="<?= ROOT ?>/assets/js/signup.js"></script>
 </body>
 
 </html>

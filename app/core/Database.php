@@ -10,8 +10,8 @@ trait Database
     {
 
         $string = "mysql:hostname=" . DBHOST . ";dbname=" . DBNAME . "";
-        return $con = new PDO($string, DBUSER, DBPASS);
-        return $con;
+        $conn = new PDO($string, DBUSER, DBPASS);
+        return $conn;
     }
 
     /**
