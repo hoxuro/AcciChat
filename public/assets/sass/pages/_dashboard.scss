@@ -278,9 +278,9 @@
 *********************************/
 
 .error-box {
-  display: none;
   background-color: rgb(255, 110, 110);
   padding: 0.5rem 0.25rem;
+  display: none;
 
   &__text {
     text-align: center;

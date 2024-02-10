@@ -32,6 +32,11 @@ class App
             if (method_exists($this->controller, $url[1])) {
                 $this->method = $url[1];
                 unset($url[1]);
+            } else {
+                $this->controller = '_404';
+                require_once '../app/controllers/' . $this->controller . '.php';
+                $this->controller = new $this->controller;
+                $this->method = 'index';
             }
         }
 

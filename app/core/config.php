@@ -1,7 +1,7 @@
 <?php
 
 // DataBase configuration 
-define('DBNAME', 'todoapp');
+define('DBNAME', 'accichat');
 define('DBHOST', 'localhost');
 define('DBUSER', 'root');
 define('DBPASS', '');

@@ -4,9 +4,7 @@ class Model
 {
     use Database;
 
-    // mi modelo de todos tendra una propiedad llamada todos que
-    // serán los todos existentes obtenidos de la base de datos
-    public $todos = [];
+    protected $loggedUser;
 
     /**
      * Método constructor que nos permite crear instancias de Model
@@ -15,113 +13,111 @@ class Model
      */
     public function __construct()
     {
-        $this->refreshTodo();
+        $this->loggedUser = null;
     }
 
     /**
-     * Metodo que permite tener nuestro array de todos
-     * actualizado a como este en la base de datos en ese
-     * momento.
+     * Getter method that allow us to get the selected user in our
+     * Model with security.
+     * 
+     * @return PDO $logguedUser selected in our model, null
+     * if is not selected
      */
-    public function refreshTodo()
+    public function getUser()
     {
-        $query = "SELECT * FROM todos";
-        $resultado =  $this->query($query);
+        return $this->loggedUser;
+    }
 
-        // Si ha habido error con la base de datos
+    /**
+     * Method that allows to check if the email was already
+     * registered in our application
+     * 
+     * @param email string the email of the user that want to register
+     * @return resultado false if the email is not registered in the
+     * database.
+     */
+    public function emailExists($email)
+    {
+        $query = "SELECT email FROM users WHERE email LIKE '{$email}'";
+
+        $resultado = $this->query($query);
+
+        // If there was an exception in our database
         if ($resultado instanceof PDOException) {
             echo '<span style="color: red;">Error, no ha podido insertarse su TODO.</span></br>';
         }
-
-        // Si no ha habido error con la base de datos
+        // If there has not been an exception in our database
         if (!($resultado instanceof PDOException)) {
-            $this->todos = $resultado;
+            return $resultado;
         }
     }
 
     /**
-     * Metodo que permite añadir un todo a la base de datos.
+     * Method that allow us to insert a new user to our database
+     * and complete the registration.
      * 
-     * @param description la description del todo a insertar
+     * @param string $unique_id the unique user identifier.
+     * @param string $fname the user name.
+     * @param string $lname the user last name.
+     * @param string $email the user email.
+     * @param string $password the user password.
+     * @param string $prof_pic the user profile pic name in our uploaded folder.
+     * @param string $status the status of the user.
+     * 
+     * @return false is the result of the query is not a PDO exception
      */
-    public function addTodo($description)
+    public function addUser($unique_id, $fname, $lname, $email, $password, $prof_pic, $status)
     {
-        $query = "INSERT INTO todos (description, status) VALUES
-                    ('" . $description . ".', false)";
+        $query = "INSERT INTO users (unique_id, fname, lname, email, password, img, status)
+        VALUES ({$unique_id}, '{$fname}', '{$lname}', '{$email}', '{$password}', '{$prof_pic}', '{$status}')";
+
 
         $resultado = $this->query($query);
 
-        // Si ha habido error con la base de datos
-        if ($resultado instanceof PDOException) {
-            echo '<span style="color: red;">Error, no ha podido insertarse su TODO.</span></br>';
-        }
+        // // Si ha habido error con la base de datos
+        return !($resultado instanceof PDOException);
     }
 
     /**
-     * Metodo que permite eliminar un todo a la base de datos.
+     * Method that allow us to get the logged user from the 
+     * database with the help of the email.
      * 
-     * @param id el ID del todo a eliminar
+     * @param string $unique_id the unique id of the user we want to
+     * select
+     * 
      */
-    public function deleteTodo($id)
+    public function selectUser($email)
     {
-        $query = "DELETE FROM todos WHERE id = $id ";
+        $query = "SELECT * FROM users WHERE email = '{$email}'";
 
         $resultado = $this->query($query);
 
-        // Si ha habido error con la base de datos
         if ($resultado instanceof PDOException) {
-            echo '<span style="color: red;">Error, no ha podido eliminarse el TODO.</span></br>';
+            echo '<span style="color: red;">Error, no ha podido seleccionarse el usuario.</span></br>';
+            return false;
         }
+
+        $this->loggedUser = $resultado;
     }
 
     /**
-     * Metodo que permite editar un todo existente en la base
-     * de datos.
+     * Method that allow us to check if the email entered in the login
+     * form is registered in our database.
      * 
-     * @param id el ID del todo a editar
+     * @param string $email the email of the user we want to logged
+     * @param string $password the password of the user we want to logged
      */
-    public function editTodo($id, $description, $status)
+    public function userExists($email, $password)
     {
-        $query = "UPDATE todos SET description = '$description' , status = '$status'
-                  WHERE id = $id";
+        $query = "SELECT * FROM users WHERE email = '{$email}' AND password = '{$password}'";
 
         $resultado = $this->query($query);
 
-        // Si ha habido error con la base de datos
         if ($resultado instanceof PDOException) {
-            echo '<span style="color: red;">Error, no ha podido editarse el TODO.</span></br>';
-        }
-    }
-
-    /**
-     * Metodo que permite cambiar el estado de un todo de la base
-     * de datos.
-     * 
-     * @param id el ID del todo cuyo estado queremos cambiar
-     */
-    public function changeStatus($id)
-    {
-
-        // primero obtengo el status
-        $query = "SELECT status FROM todos WHERE id = $id";
-        $resultado = $this->query($query);
-
-        // Si ha habido error con la base de datos
-        if ($resultado instanceof PDOException) {
-            echo '<span style="color: red;">Error, no se ha podido cambiar su status el TODO.</span></br>';
+            echo '<span style="color: red;">Error, en la consulta.</span></br>';
+            return false;
         }
 
-        // Si no ha habido error con la base de datos
-        if (!($resultado instanceof PDOException)) {
-            // cambio el status del todo
-            $status = !$resultado;
-            $query = "UPDATE todos SET status = $status";
-            $resultado = $this->query($query);
-
-            // Si ha habido error con la base de datos
-            if ($resultado instanceof PDOException) {
-                echo '<span style="color: red;">Error, no sea ha podido cambiar su status el TODO.</span></br>';
-            }
-        }
+        return $resultado;
     }
 }
