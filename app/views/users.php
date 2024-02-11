@@ -2,6 +2,10 @@
 
 require_once(__DIR__ . '/inc/header.php');
 
+
+// Collect the user PDO
+$user = $data['user'];
+
 ?>
 
 <body>
@@ -11,10 +15,11 @@ require_once(__DIR__ . '/inc/header.php');
             <!-- CURRENT USER -->
             <div class="user">
                 <div class="user__info">
-                    <img src="<?= ROOT ?>/assets/img/empty-profile.webp" alt="">
+                    <img src="<?php echo ROOT . '/assets/images/' . $user->img; ?>" alt="">
+
                     <div class="user__text-box">
-                        <p class="user__name">Your Name</p>
-                        <p class="user__activity">Active now</p>
+                        <p class="user__name"><?php echo ucwords($user->fname . ' ' . $user->lname)  ?></p>
+                        <p class="user__activity"><?php echo $user->status; ?></p>
                     </div>
                 </div>
                 <div class="user__btn-box">
@@ -23,81 +28,19 @@ require_once(__DIR__ . '/inc/header.php');
             </div>
 
             <!-- SEARCH FORM -->
-            <form class="search-form" action="#" method="post">
+            <div class="search-box">
                 <input type="text" name="username" placeholder="Enter a name to search..." />
                 <button type="submit" class="btn-search"><i class="fas fa-search"></i></button>
-            </form>
+            </div>
 
             <!-- USER LIST -->
             <ul class="users-list">
-                <!-- USER -->
-                <div class="user-sm">
-                    <div class="user-sm__info">
-                        <img src="<?= ROOT ?>/assets/img/empty-profile.webp" alt="">
-                        <div class="user-sm__text-box">
-                            <p class="user-sm__name">Your Name</p>
-                            <p class="user-sm__last-mess">This is a text...</p>
-                        </div>
-                    </div>
-                    <div class="user-sm__status-box">
-                        <div class="user-sm__status  user-sm__status--online"></div>
-                    </div>
-                </div>
-                <!-- USER -->
-                <div class="user-sm">
-                    <div class="user-sm__info">
-                        <img src="<?= ROOT ?>/assets/img/empty-profile.webp" alt="">
-                        <div class="user-sm__text-box">
-                            <p class="user-sm__name">Your Name</p>
-                            <p class="user-sm__last-mess">This is a text...</p>
-                        </div>
-                    </div>
-                    <div class="user-sm__status-box">
-                        <div class="user-sm__status  user-sm__status--offline"></div>
-                    </div>
-                </div>
-                <!-- USER -->
-                <div class="user-sm">
-                    <div class="user-sm__info">
-                        <img src="<?= ROOT ?>/assets/img/empty-profile.webp" alt="">
-                        <div class="user-sm__text-box">
-                            <p class="user-sm__name">Your Name</p>
-                            <p class="user-sm__last-mess">This is a text...</p>
-                        </div>
-                    </div>
-                    <div class="user-sm__status-box">
-                        <div class="user-sm__status  user-sm__status--online"></div>
-                    </div>
-                </div>
-                <!-- USER -->
-                <div class="user-sm">
-                    <div class="user-sm__info">
-                        <img src="<?= ROOT ?>/assets/img/empty-profile.webp" alt="">
-                        <div class="user-sm__text-box">
-                            <p class="user-sm__name">Your Name</p>
-                            <p class="user-sm__last-mess">This is a text...</p>
-                        </div>
-                    </div>
-                    <div class="user-sm__status-box">
-                        <div class="user-sm__status  user-sm__status--online"></div>
-                    </div>
-                </div>
-                <!-- USER -->
-                <div class="user-sm">
-                    <div class="user-sm__info">
-                        <img src="<?= ROOT ?>/assets/img/empty-profile.webp" alt="">
-                        <div class="user-sm__text-box">
-                            <p class="user-sm__name">Your Name</p>
-                            <p class="user-sm__last-mess">This is a text...</p>
-                        </div>
-                    </div>
-                    <div class="user-sm__status-box">
-                        <div class="user-sm__status  user-sm__status--online"></div>
-                    </div>
-                </div>
+
             </ul>
         </div>
     </main>
+
+    <script src="<?= ROOT ?>/assets/js/users.js"></script>
 </body>
 
 </html>

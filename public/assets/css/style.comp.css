@@ -296,14 +296,14 @@ body {
     .user-sm {
       margin: 1rem auto; } }
 
-.search-form {
+.search-box {
   max-width: 45rem;
   margin: 4rem auto;
   display: flex;
   align-items: center;
   align-content: center;
   /*************** QUERIES ****************/ }
-  .search-form .btn-search {
+  .search-box .btn-search {
     font-size: var(--default-fs);
     padding: 1rem 1.5rem;
     cursor: pointer;
@@ -312,30 +312,30 @@ body {
     background-color: var(--color-primary);
     color: var(--color-white);
     transition: all 0.3s; }
-    .search-form .btn-search:hover {
+    .search-box .btn-search:hover {
       background-color: var(--color-primary-dark); }
-  .search-form input {
+  .search-box input {
     font-size: var(--default-sm); }
-  .search-form input[type="text"] {
+  .search-box input[type="text"] {
     width: 100%;
     padding: 1rem 0;
     color: var(--color-grey-dark-3);
     background: none;
     flex: 1;
     border: none; }
-    .search-form input[type="text"]:focus {
+    .search-box input[type="text"]:focus {
       outline: none; }
   @media only screen and (max-width: 37.5em) {
-    .search-form {
+    .search-box {
       flex: 0 0 10%;
       margin: 1rem auto;
       width: 100%; } }
   @media only screen and (max-width: 23.44em) {
-    .search-form {
+    .search-box {
       flex-flow: column;
       align-items: flex-start;
       align-content: flex-start; }
-      .search-form button[type="submit"] {
+      .search-box button[type="submit"] {
         margin-top: 2rem;
         max-width: fit-content; } }
 
@@ -493,6 +493,8 @@ body {
 .users-list {
   height: 26rem;
   overflow-y: auto; }
+  .users-list a {
+    text-decoration: none; }
   @media only screen and (max-width: 37.5em) {
     .users-list {
       height: 0;

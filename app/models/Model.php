@@ -5,6 +5,7 @@ class Model
     use Database;
 
     protected $loggedUser;
+    protected $users;
 
     /**
      * Método constructor que nos permite crear instancias de Model
@@ -14,6 +15,7 @@ class Model
     public function __construct()
     {
         $this->loggedUser = null;
+        $this->users = [];
     }
 
     /**
@@ -110,6 +112,103 @@ class Model
     public function userExists($email, $password)
     {
         $query = "SELECT * FROM users WHERE email = '{$email}' AND password = '{$password}'";
+
+        $resultado = $this->query($query);
+
+        if ($resultado instanceof PDOException) {
+            echo '<span style="color: red;">Error, en la consulta.</span></br>';
+            return false;
+        }
+
+        return $resultado;
+    }
+
+    /**
+     * Method that allow us to check if the email entered in the login
+     * form is registered in our database.
+     * 
+     * @param string $unique_id a unique number stored in the session
+     * 
+     * @return int $resultado 1 if the user exists in the database
+     */
+    public function sessionExists($unique_id)
+    {
+        $query = "SELECT count(*) AS num_rows FROM users 
+                  WHERE unique_id = {$_SESSION['unique_id']}";
+
+        $resultado = $this->query($query);
+
+        if ($resultado instanceof PDOException) {
+            echo '<span style="color: red;">Error, en la consulta.</span></br>';
+            return false;
+        }
+
+        return $resultado[0]->num_rows;
+    }
+
+    /**
+     * Method that allow us to select all from the user that is logged
+     * in our application.
+     * 
+     * @param string $unique_id a unique number stored in the session
+     * 
+     * @return PDO $resultado the user data
+     */
+    public function selectSession($unique_id)
+    {
+        $query = "SELECT * FROM users 
+                  WHERE unique_id = {$_SESSION['unique_id']}";
+
+        $resultado = $this->query($query);
+
+        if ($resultado instanceof PDOException) {
+            echo '<span style="color: red;">Error, en la consulta.</span></br>';
+            return false;
+        }
+
+        return $resultado[0];
+    }
+
+    /**
+     * Method that allow us to refresh the data of the users that
+     * exists in our database.
+     */
+    public function refreshUsers()
+    {
+        $query = "SELECT * FROM users";
+
+        $resultado = $this->query($query);
+
+        if ($resultado instanceof PDOException) {
+            echo '<span style="color: red;">Error, en la consulta.</span></br>';
+            return false;
+        }
+
+        // this allow us to clone by value an array of objects
+        $this->users = $resultado;
+    }
+
+    /**
+     * Method that allow us to refresh the data of the users that
+     * exists in our database.
+     * 
+     * @return Array $users all the users in our database by value
+     */
+    public function getUsers()
+    {
+        return array_merge(array(), $this->users);
+    }
+
+
+    /**
+     * Method that allow us to get a user that exists in our database
+     * by checking his name.
+     * 
+     * @return PDO the user we are searching
+     */
+    public function getUserByName($searchName)
+    {
+        $query = "SELECT * FROM users WHERE fname like '%{$searchName}%' OR lname like '%{$searchName}%'";
 
         $resultado = $this->query($query);
 
