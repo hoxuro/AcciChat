@@ -19,7 +19,7 @@ btnSendEl.addEventListener("click", function () {
       if (xhr.status === 200) {
         let data = xhr.response;
         if (data == "success") {
-          location.href = "users";
+          location.href = "http://localhost/accichat/home/users";
         } else {
           errorBox.style.display = "block";
           errorText.textContent = data;

@@ -8,3 +8,4 @@ define('DBPASS', '');
 define('DBDRIVE', '');
 
 define('ROOT', 'http://localhost/accichat/public');   // Cambiará cuando cambiemos de servidor
+define('RESOURCES', 'C:\xampp\htdocs\accichat\app\resources\\');   // Cambiará cuando cambiemos de servidor

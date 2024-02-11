@@ -15,7 +15,24 @@ class Home extends Controller
 
     public function users()
     {
-        $this->view('users');
+        // check if user is logged
+        if (!isset($_SESSION['unique_id'])) {
+            header('location: http://localhost/accichat');
+        }
+
+        // check if the user exists in the database
+        $model = $this->model('Model');
+
+        // check if the user is logged previously
+        if ($model->sessionExists($_SESSION['unique_id'])) {
+            // select the user logged
+            $user = $model->selectSession($_SESSION['unique_id']);
+            // I have the logged user data so i used it in the view
+            $this->view('users', ['user' => $user]);
+        } else {
+            // if the user is not logged in
+            $this->view('login');
+        }
     }
 
     public function chat()
@@ -54,7 +71,7 @@ class Home extends Controller
 
                             // move the user img to our uploading folder 
                             $new_img_name = $time . $img_name;
-                            if (move_uploaded_file($tmp_name, __DIR__ . '\..\resources\images\\' . $new_img_name)) {
+                            if (move_uploaded_file($tmp_name, __DIR__ . '\..\..\public\assets\images\\' . $new_img_name)) {
                                 $status = "Active now";
                                 // creating a random ID for user
                                 $random_id = rand(time(), 10000000);
@@ -126,6 +143,76 @@ class Home extends Controller
             }
         } else {
             echo 'All input fields are required!';
+        }
+    }
+
+    private function userData($users)
+    {
+        $output = "";
+        foreach ($users as $user) {
+            $output .= '
+            <!-- USER -->
+        <a href="chat?user_id=' . $user->unique_id . '">
+            <div class="user-sm">
+                <div class="user-sm__info">
+                    <img src="' . ROOT . '/assets/images/' . $user->img . '" alt="">
+                    <div class="user-sm__text-box">
+                        <p class="user-sm__name">' . ucwords($user->fname . " " . $user->lname) . '</p>
+                        <p class="user-sm__last-mess">This is a text...</p>
+                    </div>
+                </div>
+                <div class="user-sm__status-box">
+                    <div class="user-sm__status  user-sm__status--online"></div>
+                </div>
+            </div>
+        </a>';
+        }
+
+        return $output;
+    }
+
+    public function searchUsers()
+    {
+        // select all users in the database
+        $model = $this->model('Model');
+
+        $users = $model->refreshUsers();
+
+        $users = $model->getUsers();
+
+        $output = "";
+
+        if ($users) {
+            $output = $this->userData($users);
+        } else {
+            $output .= 'No users available!';
+        }
+
+
+        echo $output;
+    }
+
+    public function search()
+    {
+
+        if (isset($_POST['searchName'])) {
+            $searchName = $_POST['searchName'];
+
+            $model =   $this->model('Model');
+            $output = "";
+
+            // check if the user searched exists
+            $searchResult = $model->getUserByName($searchName);
+
+            if ($searchResult) {
+                $output = $this->userData($searchResult);
+            } else {
+                $output .= 'User not found!';
+            }
+
+            echo $output;
+        } else {
+            echo 'The name is not setted!';
         }
     }
 }

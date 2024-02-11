@@ -136,6 +136,10 @@
   height: 26rem;
   overflow-y: auto;
 
+  a {
+    text-decoration: none;
+  }
+
   @include respond(phone) {
     height: 0;
     flex: 0 0 65%;
